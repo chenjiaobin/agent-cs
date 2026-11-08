@@ -1,6 +1,6 @@
 {
   "name": "agent-cs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,11 +8,13 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "smoke": "node scripts/smoke.mjs"
+    "smoke": "node scripts/smoke.mjs",
+    "verify": "node scripts/verify-v02.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai-compatible": "3.0.82",
     "@ai-sdk/react": "4.0.163",
+    "@electric-sql/pglite": "0.5.15",
     "ai": "7.0.159",
     "next": "16.4.3",
     "react": "19.3.1",

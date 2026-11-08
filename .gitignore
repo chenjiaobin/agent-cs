@@ -1,5 +1,7 @@
 node_modules/
 .next/
+# PGlite 的本地数据目录（v0.2 起）。聊天记录不该进仓库。
+.data/
 out/
 build/
 

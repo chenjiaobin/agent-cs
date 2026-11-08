@@ -2,13 +2,23 @@
 
 这份清单是第 1 篇定的规矩。后面每篇交付时对着它看一眼，做不到就不算完成。
 
-## v0.1 · 立项（本篇）
+## v0.1 · 立项
 
-- [ ] 仓库能 `pnpm install` 且 `pnpm build` 通过
-- [ ] `node scripts/smoke.mjs` 能打到 DeepSeek，并打印首字延迟
-- [ ] 关掉思考模式后，首字延迟明显低于开着（脚本会自动对比）
-- [ ] `docker compose up -d` 后能连上 Postgres，`\dx` 能看到 vector 扩展
-- [ ] 依赖版本写死在 package.json，不用 `latest`
+- [x] 仓库能 `npm install` 且 `npm run build` 通过
+- [x] `node scripts/smoke.mjs` 能打到 DeepSeek，并打印首字延迟
+- [x] 关掉思考模式后，首字延迟明显低于开着（脚本会自动对比）
+- [ ] `docker compose up -d` 后能连上 Postgres，`\dx` 能看到 vector 扩展（第 5 篇才需要）
+- [x] 依赖版本写死在 package.json，不用 `latest`
+
+## v0.2 · 能对话（本篇）
+
+- [x] `npm run typecheck` 零错误，`npm run build` 通过
+- [x] 不需要 Docker / 本地 Postgres，clone 下来就能跑
+- [x] `node scripts/verify-v02.mjs` 全绿：新会话为空、POST 是流、落两条消息、状态 done、刷新还在
+- [x] 页面刷新后历史消息还在，同一个 `?c=` 在多个标签页打开是同一个会话
+- [x] 断流的半截回答被保留并标 `aborted`，前端有提示与重新加载入口
+- [x] 消息表已预留 `reasoning_content` / `tool_calls` / `usage` / `model` / `status`
+- [ ] 真实客户数据接入前必须补鉴权与 RLS（第 9 篇）
 
 ## 全系列验收线（第 13 篇要全绿）
 
