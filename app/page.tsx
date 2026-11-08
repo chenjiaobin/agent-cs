@@ -5,7 +5,14 @@ import { useState } from 'react'
 
 export default function ChatPage() {
   const [input, setInput] = useState('')
-  const { messages, sendMessage, status, stop, error } = useChat()
+  
+  // 使用自定义的 API 接口
+  // const { messages, sendMessage, status, stop, error } = useChat({
+  //   transport: new DefaultChatTransport({
+  //     api: '/api/chats',
+  //   }),
+  // })
+  const { messages, sendMessage, status, stop, error } = useChat() // 使用默认的 API 接口api/chat
 
   const busy = status === 'streaming' || status === 'submitted'
 
